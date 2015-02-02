@@ -1,0 +1,22 @@
+.legend {
+	float: left;
+	width: 1250px;
+	white-space: nowrap;
+}
+ul.list-inline{
+	list-style-type: none;
+	margin:0;
+	padding:0;
+}
+li.key {
+	border-top-width: 15px;
+	border-top-style: solid;
+	border-color: 4;
+	font-size: .75em;
+	width: 81px;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: inline-block;
+}

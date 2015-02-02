@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+			<title>Tweedar</title>
+			<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+			<script src="http://d3js.org/d3.v3.min.js"></script>
+			<script src="http://d3js.org/topojson.v1.min.js"></script>
+			<script src="jquery/jquery.cycle.all.js"></script>
+			<link rel="stylesheet" href="css/style.css">
+			<link rel="stylesheet" href="css/buttons.css">
+			<link rel="stylesheet" href="css/containers.css">
+			<link rel="stylesheet" href="css/legend.css">
+			<link rel="stylesheet" href="css/mapview.css">
+    </head>
+    <body>
+<div id="wrap">
+
+<!--header (body)-->
+		<div class="header">
+    		  <div class="headerbird">
+    		  		<img src="images/tweedarbird.png" alt="tweedar bird" style="width:110px;height:110px">
+    		  </div>
+    		  <h1 class="headertext"> Tweedar: </h1>
+    		  <h1 class="headertext">The Emotional Weather Radar</h1>
+    		</div>
+			
+<!--body (body)-->
+			<div class="body">		
+				<div class="left">
+				
+	<!-- map-->
+					<div class="map"></div>
+					
+	<!-- legend-->
+					<div class="legend">
+						<ul class="list-inline">
+							<li class="key" style="border-top-color:#093057; opacity:1;"><!--<-8.5--> very unhappy </li>
+							<li class="key" style="border-top-color:#0d5167; opacity:1;">  <!--<-6.16--> four sd</li>
+							<li class="key" style="border-top-color:#107878; opacity:1;"><!-- <-4.27-->three sd</li>
+							<li class="key" style="border-top-color:#14896a; opacity:1"><!-- <-2.38-->two sd</li>
+							<li class="key" style="border-top-color:#189a57; opacity:1;"><!--<-0.49-->one sd</li>
+							<li class="key" style="border-top-color:#1cab3d; opacity:1;"><!--<1.4--> average</li>
+							<li class="key" style="border-top-color:#25bb21; opacity:1;"><!--<3.29-->one sd</li>
+							<li class="key" style="border-top-color:#55cc26; opacity:1;"><!--<5.18-->two sd</li>
+							<li class="key" style="border-top-color:#8bdd2b; opacity:1;"><!--<7.07-->three sd</li>
+							<li class="key" style="border-top-color:#c7ee31; opacity:1;"><!--<8.96--> four sd</li>	
+							<li class="key" style="border-top-color:#fff438; opacity:1;"><!--8.96<-->very happy</li>		
+						</ul>
+					</div>
+					
+	<!-- graph --> 
+					<div class="graph">
+						<!--<div class="graphview"></div>
+						<input type="button" class="button" value="add graph" onclick="add_graph();" id="add_graph_button">
+						<div id="graphoptions" style="opacity:1;"> Start time: <select id="starttimestamplist"class="starttimestamplist"></select> 
+																				 End time:   <select id="endtimestamplist"class="endtimestamplist"></select>
+						</div>					
+						<input type="button" class="button" value="add region" onclick="add_region();" id="add_region_button">
+						<input type="button" class="button" value="add selection" onclick="add_selection();" id="add_selection_button" style="height:0;opacity:0;">
+						<div id="region_list"></div>-->
+					</div>		
+					
+							
+				</div>	
+				<div class="right">
+				
+	<!-- menu -->
+					<div class="menu">
+						<ul class="menuitem">
+							
+							<!-- how to display type -->
+							<li><input id="drawCloudMap" class="button" type="button" value="Draw Clouds" onclick="toggleCloudMode();">	
+							    <select id="colorthemelist"class="colorthemelist">
+										<option value="outliers">Emphasize Extremes</option>
+										<option value="equal">No Emphasis</option>
+								 </select>
+							</li>					
+							<li id="cloudthresholdtitle" style="opacity:0;height:0;"> Cloud threshold
+								<select id="cloudthreshold" name="cloudthreshold">
+							    	<option value="five_sd_sad">5 sd negative</option>
+							    	<option value="four_sd_sad">4 sd negative</option>
+							    	<option value="three_sd_sad">3 sd negative</option>
+							    	<option value="two_sd_sad">2 sd negative</option>
+							    	<option value="one_sd_sad">1 sd negative</option>
+							    	<option value="median">median</option>
+								</select>								
+							</li>
+							<li id="gradientthresholdtitle" style="opacity:0;height:0;">Gradient threshold
+							    <select id="gradientthreshold" name="gradientthreshold" >
+							    	<option value="five_sd_sad">5 sd negative</option>
+							    	<option value="four_sd_sad">4 sd negative</option>
+							    	<option value="three_sd_sad">3 sd negative</option>
+							    	<option value="two_sd_sad">2 sd negative</option>
+							    	<option value="one_sd_sad">1 sd negative</option>
+							    	<option value="median">median</option>
+							    </select>
+							</li>
+							
+						</ul>
+						<ul class="menuitem">
+							<!-- times -->
+							<li><form ><select id="timestamplist"class="timestamplist"></select></form></li>	
+							<li> <input id="previousTimestamp" class="button" type="button" value="previous">
+							     <input id="nextTimestamp" class="button" type="button" value="next"> </li>	
+							     
+							<!--<li><input id="countrySelection" class="button" type="button" value="Select by country" onclick="toggleCountrySelection();" /></li>					
+							<li><input id="squareSelection"class="button" type="button" value="Selection square" onclick="toggleSquareSelection();" /></li>	
+							<li><input id="drawfreehand" class="button" type="button" value="lasso selection tool" onclick="lassotool();"></li> -->	
+								
+						</ul>
+					</div>
+					<div class="words"></div>		
+					
+							
+				</div>	
+			</div>
+			
+<!--footer (body)-->
+			<div class="footer">
+				'Created by Holland Herbert as a final project Visualization for CSCI:5609'				
+			</div>
+			
+		    		
+		<script type="text/javascript" src="javascript/mapdata.js"></script>
+		<script type="text/javascript" src="javascript/mapview.js"></script>
+		<script type="text/javascript" src="javascript/graphview.js"></script>
+		<script type="text/javascript" src="javascript/mapview_squares.js"></script>	
+		<script type="text/javascript" src="javascript/menuview.js"></script>	
+	</div>
+	</body>
+</html> 

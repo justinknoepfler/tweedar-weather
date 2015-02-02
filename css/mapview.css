@@ -1,0 +1,45 @@
+
+.graticule {
+  fill: none;
+  stroke: #222;
+  stroke-width: .5px;
+  stroke-opacity: .5;
+}
+
+.land {
+  /*fill: #A3CC7A;*/
+  /*fill: #26cc43;*/
+  
+}
+
+.boundary {
+  fill: none;
+  stroke: #fff;
+  stroke-width: .5px;
+}
+
+.country {
+	
+	/*fill: #a3cc7a;*/
+	/*fill: #F1A393;*/
+}
+
+svg{
+	background-color: #CCFFFF;
+	
+}
+
+
+rect.selection {
+    stroke          : black;
+    stroke-dasharray: 2px;
+    stroke-opacity  : 1;
+    fill            : transparent;
+}
+
+rect.selected{
+	stroke: #F08C00
+	stroke-width :1px
+}
+
+.slideshow{}

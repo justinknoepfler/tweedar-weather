@@ -1,0 +1,89 @@
+/* Header  [bird | title] */
+.header
+{
+	width: 100%;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.headerbird
+{
+	 width: 130px;
+	 height: 130px;
+    float: left;
+}
+
+h1.headertext
+{
+    color: #ffffff;
+    font-size: 30px;
+    white-space: nowrap;
+}
+
+/* Body [left | right] */
+.body
+{
+    padding: 10px;
+    background-color: #ffffff;
+    float: left;
+    width: 1300px;
+}
+
+/* left  [map] 
+ *			[graph]
+ */
+.left
+{
+	float: left;
+	width: 980px;
+	white-space: nowrap;
+}
+.map
+{
+	float: left;
+	width: 960px;
+	white-space: nowrap;
+}
+
+.graph
+{
+	float: left;
+	width: 1000px;
+	white-space: nowrap;
+}
+
+/* right  [menu] 
+ *			 [words]
+ */
+.right
+{
+	float: left;
+	width: 200px;
+	white-space: nowrap;
+}
+.menu
+{
+	float: left;
+	width: 250px;
+	white-space: nowrap;
+}
+.words
+{
+	float: left;
+	width: 200px;
+	white-space: nowrap;
+}
+
+/* footer
+ */
+ 
+.footer
+{
+	float: left;
+	white-space: nowrap;
+	
+    text-align: center;
+    padding: 10px;
+    font-size: 70%;
+    color: #ffffff;
+}
